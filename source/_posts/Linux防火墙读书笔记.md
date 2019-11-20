@@ -37,3 +37,14 @@ ICMP通常用于ping服务。
 #### 传输层机制 TCP、UDP
 UDP是无连接协议，用于DNS查询、SNMP（简单网络管理协议）和RADIUS（远程用户拨号认证系统）等。
 TCP是面向连接等协议，意味着它向上提供可靠的服务。两个应用程序用TCP通信，必须建立一个连接。
+TCP的三次建立连接握手分别是 SYN(SYN_SEND状态)>SYN-ACK(SYN_RCVD)>ACK(ESTABLISHED) 连接此时已经建立成功。
+(SYN_SEND)SYN > (LISTEN)
+(ESTABLISHED) < SYN-ACK(SYN_RCVD)
+(ESTABLISHED) ACK > (ESTABLISHED)
+TCP的四次挥手比建立连接多一次的原因是因为TCP连接的全双工特性，因为任何一遍都可能在任何时候发送数据。
+断开分别是
+(ESTABLISHED) FIN > (ESTABLISHED)
+(FIN_WAIT1) < ACK (CLOSE_WAIT)
+(FIN_WAIT2) < FIN (LAST_ACK)
+(TIME_WAIT) FIN-ACK > (CLOSE)
+(CLOSE)
