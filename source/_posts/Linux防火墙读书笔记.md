@@ -99,3 +99,7 @@ iptables防火墙是基于Netfilter建立的。iptables命令实现了创建防�
 在默认的filter表中，有一条用于处理输入或即将传入防火墙的数据的规则链，一条用于处理输出或即将离开防火墙的数据的规则链，一条用于处理转发或通过防火墙送出的数据的规则链，和用户自定义规则链。
 filter表是实现基本的防火墙的默认表，nat表用来提供NAT和相关的功能，mangle在数据包被防火墙修改的时候使用。
 
+NAT表支持源NAT（SNAT）和目的NAT（DNAT）。nat表允许修改一个数据包的源地址或目的地址以及端口。它有三个内建规则链：PREOUTING规则链、OUTPUT规则链、POSTROUTING规则链。
+
+mangle表包含了设置特殊数据包路由标志的规则。接这些规则接下来将在filter表中进行检查。mangle表有5个内建的链，PREOUTING规则链、OUTPUT规则链、POSTROUTING规则链、INPUT规则链、FORWARD规则链。
+
