@@ -3,7 +3,7 @@ title: 基于GlustFS的CetnOS持久化存储
 date: 2019-01-20 14:57:14
 tags:
 ---
-### 基于centos初始化
+#### 基于centos初始化
 手动修改host文件，添加节点信息。
 ```bash
 192.168.56.2  master
@@ -13,7 +13,7 @@ tags:
 ```
 执行初始化脚本进行初始化。
 
-### 格式化磁盘
+#### 格式化磁盘
 
 添加一块新的硬盘，名为/dev/sdb
 
@@ -27,7 +27,7 @@ mount -a && mount
 df -h
 ```
 
-### GlustFS安装和初始化
+#### GlustFS安装和初始化
 
 每个节点都执行以下操作
 
@@ -70,7 +70,7 @@ gluster volume  add-brick   k8s-volume  master:/bricks/brick1  # 在分机上新
 gluster volume info all # 查看这个挂载的所有信息
 ```
 
-### GlustFS常用操作
+#### GlustFS常用操作
 
 如果需要停止volume挂载，那么就需要先停止，再删除。
 

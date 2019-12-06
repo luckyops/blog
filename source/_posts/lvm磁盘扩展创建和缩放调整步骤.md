@@ -4,8 +4,7 @@ date: 2018-12-18 12:16:33
 tags:
 ---
 
-####  lvm创建，扩展，以及缩放调整
-##### lvm 创建pv，创建lv
+#### lvm 创建pv，创建lv
 
 ``` bash
 yum install lvm2 -y

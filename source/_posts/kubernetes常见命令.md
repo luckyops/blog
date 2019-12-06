@@ -3,11 +3,10 @@ title: kubernetes常见命令
 date: 2018-10-07 23:37:20
 tags:
 ---
-### 常见命令总结
-
 #### 添加node
 
 ``` bash 
+kubeadm token create --print-join-command
 ```
 
 #### 查看node状态

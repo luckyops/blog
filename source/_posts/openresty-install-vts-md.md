@@ -4,7 +4,7 @@ date: 2019-04-23 13:04:43
 tags:
 ---
 
-### nginx moudle vts
+#### nginx moudle vts
 nginx vts地址为 https://github.com/BoTranVan/nginx-module-vts.git
 执行以下命令clone仓库
 
@@ -12,7 +12,7 @@ nginx vts地址为 https://github.com/BoTranVan/nginx-module-vts.git
 git clone https://github.com/BoTranVan/nginx-module-vts.git
 ```
 
-### openresty install vts插件
+#### openresty install vts插件
 
 机器上已经有yum装好的openresty，所以需要下载openresty源码，重新build一个安装插件的版本。
 
@@ -72,7 +72,7 @@ vim  /usr/local/openresty/nginx/conf/nginx.conf
 
 
 
-### nginx install vts插件
+#### nginx install vts插件
 
 机器上已经有yum装好的nginx，所以需要下载nginx源码，重新build一个安装插件的版本。
 
@@ -136,7 +136,7 @@ vim /etc/nginx/nginx.conf
 # 执行 nginx -t进行测试，如果没有问题，nginx -s reload重启生效
 ```
 
-### 部署ngninx-vts-exporter
+#### 部署ngninx-vts-exporter
 
 关于编译了vts插件以后，nginx和openresty的信息就不能用默认的信息采集客户端来做了，比如说prometheus用的nginx-exporter，就得用vts版。
 在这里提供两个简单的nginx vts/openresty vts的exporter。

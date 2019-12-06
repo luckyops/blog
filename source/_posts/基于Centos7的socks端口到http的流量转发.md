@@ -3,13 +3,13 @@ title: 基于Centos7的socks端口到http的流量转发
 date: 2018-10-03 00:36:05
 tags:
 ---
-### 基于docker部署 ss-server 
+#### 基于docker部署 ss-server 
 
 ``` bash 
 docker run -dt --name ssserver -p 6443:6443 -p 6500:6500/udp mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443  -m chacha20 -k 密码 --fast-open" -x -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2"
 ```
 
-### 基于docker部署 ss-client
+#### 基于docker部署 ss-client
 
 ``` bash
 docker run --name ss-client -dt \

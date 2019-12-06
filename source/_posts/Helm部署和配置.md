@@ -3,7 +3,7 @@ title: Helm部署和配置
 date: 2019-02-10 13:22:09
 tags:
 ---
-### Helm部署和配置
+#### Helm部署和配置
 
 Helm是一个kubernetes的包管理工具，类似于centos的yum，ubuntu的apt这么个工具。
 部署过程中还是很简单的，但是用起来并不是那么简单，原因有以下几点。

@@ -6,7 +6,7 @@ tags:
 基于mariadb 10.3做了一套主从同步的集群，默认开启的GTID同步，为了做性能优化和测试，参考了一些网上的文档和资料，使用了一些工具进行测试（主要是percona系列）。
 我先把性能测试和优化这一部分写完，紧接着再写关于备份部分的文档。
 
-##### mariadb调优部分
+#### mariadb调优部分
 
 一、系统内核调优。
 1、执行初始化脚本进行内核调优。
@@ -208,7 +208,7 @@ perl mysqltuner.pl --host IP --user user --pass password --forcemem 8192 #机器
 [Linux OS Tuning for MySQL Database Performance](https://www.percona.com/blog/2018/07/03/linux-os-tuning-for-mysql-database-performance/)
 [MariaDB基于GTID的主从复制](https://www.jianshu.com/p/26c2c03b5d67)
 
-##### mariadb性能测试部分
+#### mariadb性能测试部分
 
 mariadb的性能测试，是基于sysbench的sysbench-tpcc，需要先安装以后才能测试QPS。
 sysbench有直接提供Centos的安装方式。
