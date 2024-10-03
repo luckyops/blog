@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="<%= config.language %>">
+<html lang=<%= config.language === 'zh' ? 'zh-CN' : config.language %>>
 <%- partial('_partial/head') %>
 <body>
+
 <div class="site-nav-toggle" id="site-nav-toggle">
     <button>
         <span class="btn-bar"></span>
@@ -32,15 +33,15 @@
 <%- partial('_partial/footer', null, {cache: false}) %>
 
 </body>
-<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+
 <script>
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "<%- config.search ? config.search.path : ""%>"
     window.hexo_root = "<%- config.root %>"
     window.isPost = <%- is_post() %>
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-<%- js('js/index.js', { defer: true }) %>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<%- js('js/index.js') %>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'gitment'){%>
 <%- js('js/gitment.js') %>
@@ -76,6 +77,10 @@
             (d.head || d.body).appendChild(s);
         })();
     </script>
+<% } %>
+
+<%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'giscus'){%>
+    <%- config.comment.script %>
 <% } %>
 
 <%if( (is_post() || is_current('about')) && config.comment && config.comment.type === 'livere'){%>
