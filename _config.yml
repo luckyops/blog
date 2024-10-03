@@ -152,3 +152,6 @@ theme: aircloud
 #  type: git
 #  repo: your repo url
 #  branch: master
+
+stylesheets:
+  - /css/custom.css

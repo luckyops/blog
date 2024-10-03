@@ -40,7 +40,7 @@
     window.hexo_root = "<%- config.root %>"
     window.isPost = <%- is_post() %>
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <%- js('js/index.js') %>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <%if( (page.comments) && config.comment && config.comment.type === 'gitment'){%>
