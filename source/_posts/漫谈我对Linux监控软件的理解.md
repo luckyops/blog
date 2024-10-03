@@ -20,12 +20,10 @@ feature_img:
 
 简单来说，我在日常直接查看机器状态，会常用htop或者glances，这两个命令都不是系统自带的，都是需要使用包管理器来安装的。
 
-![htop](htop.png)
+{% asset_img htop.png htop %}
 
 这个是htop，其实也就是top这个Linux工具的升级版，看一些基础状态会比较合适。
-
-![glances](glances.png)
-
+{% asset_img glances.png glances %}
 这个是glances，显示的各种信息就比较全面了，比如说总的CPU占用和内存占用以外，还有IP、磁盘信息等。
 这两个工具在mac下和linux下都是可用的，日常开发的过程中也可以很方便的使用。
 
