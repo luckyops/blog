@@ -39,19 +39,7 @@ sidebar-avatar: img/avatar.jpg      # use absolute URL, seeing it's used in both
 # Friends
 # 友情链接
 friends: [
-    {
-        title: "10000H",
-        href: "https://www.10000h.top"
-    },{
-        title: "Xiaotao's Page",
-        href: "https://niexiaotao.com"
-    },{
-        title: "It helps SEO",
-        href: "#"
-    },{
-        title: "浙ICP备16035324号-1",
-        href: "https://beian.miit.gov.cn/"
-    }
+
 ]
 
 comment:
@@ -152,6 +140,3 @@ theme: aircloud
 #  type: git
 #  repo: your repo url
 #  branch: master
-
-stylesheets:
-  - /css/custom.css
