@@ -3,7 +3,15 @@
  * All right reserved
  * IF you have any question please email onlythen@yeah.net
  */
-
+// HTML转义函数
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
 // Global functions and listeners
 window.onresize = () => {
     // when window resize , we show remove some class that me be added
@@ -110,8 +118,8 @@ function searchFromKeyWord(keyword = ""){
 
             if(!item.title || !item.content) return 0; // break
 
-            let title = item.title
-            let content = item.content.trim().replace(/<[^>]+>/g,"").replace(/[`#\n]/g,"");
+            let title = escapeHtml(item.title);
+            let content = escapeHtml(item.content.trim()).replace(/[`#\n]/g,"");
 
             let lowerTitle = title,lowerContent = content;
 
@@ -123,7 +131,9 @@ function searchFromKeyWord(keyword = ""){
 
             if(lowerTitle.indexOf(handleKeyword) !== -1 || lowerContent.indexOf(handleKeyword) !== -1){
                 let resultItem = {}
-                resultItem.title = title.replace(keyword, "<span class='red'>" + keyword + '</span>');
+                let safeKeyword = escapeHtml(keyword);
+                resultItem.title = title.replace(safeKeyword, "<span class='red'>" + safeKeyword + '</span>');
+
                 resultItem.url = item.url;
 
                 resultItem.content = [];

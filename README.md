@@ -3,7 +3,7 @@ hexo进行调试
 ```bash
 npm run build
 npm run server
-
+npm run server --debug   
 ```
 
 检查当前有哪些包过期，如果有过期的，进行升级。  
