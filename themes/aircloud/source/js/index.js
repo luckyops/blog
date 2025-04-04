@@ -112,11 +112,11 @@ function searchFromKeyWord(keyword = ""){
 
             let title = item.title
             let content = item.content.trim();
-            let previous;
-            do {
-                previous = content;
-                content = content.replace(/<[^>]+>/g, "").replace(/[`#\n]/g, "");
-            } while (content !== previous);
+            const sanitizeHtml = require('sanitize-html');
+            content = sanitizeHtml(content, {
+                allowedTags: [],
+                allowedAttributes: {}
+            }).replace(/[`#\n]/g, "");
 
             let lowerTitle = title,lowerContent = content;
 
