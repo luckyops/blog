@@ -111,7 +111,12 @@ function searchFromKeyWord(keyword = ""){
             if(!item.title || !item.content) return 0; // break
 
             let title = item.title
-            let content = item.content.trim().replace(/<[^>]+>/g,"").replace(/[`#\n]/g,"");
+            let content = item.content.trim();
+            let previous;
+            do {
+                previous = content;
+                content = content.replace(/<[^>]+>/g, "").replace(/[`#\n]/g, "");
+            } while (content !== previous);
 
             let lowerTitle = title,lowerContent = content;
 
