@@ -25,7 +25,7 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.1.0",
-    "npm-check-updates": "^18.0.2",
+    "npm-check-updates": "^18.1.1",
     "picocolors": "^1.1.1"
   }
 }
