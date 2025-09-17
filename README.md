@@ -21,4 +21,4 @@ npm install
 
 cloudflare指定node版本号:  
 在Cloudflare控制台添加NODE_VERSION环境变量：  
-值设置为18（自动获取最新18.x版本）
+值设置为20（自动获取最新20.x版本）
