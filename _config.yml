@@ -139,6 +139,11 @@ feed:
 ## Themes: https://hexo.io/themes/
 theme: aircloud
 
+# Markdown renderer
+## Resolve ![](img.png) in posts to the post's asset folder URL
+marked:
+  postAsset: true
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 #deploy:
