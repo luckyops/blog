@@ -1,6 +1,6 @@
 ---
 title: RTX 5090 推理 Qwen3.6-27B 基准 112 tok/s
-date: 2026-08-23 23:40:00
+date: 2026-05-25 16:10:25
 ---
 
 #### 做个记录
@@ -31,7 +31,7 @@ python3 ~/bench_ttft.py --base-url http://127.0.0.1:8000 \
 
 #### 结果：
 
-![](RTX 5090 推理 Qwen3.6-27B 基准 112 tok/fig1_throughput_vs_concurrency.png)
+![](fig1_throughput_vs_concurrency.png)
 
 
 | 并发 | TTFT | TPOT | 聚合吞吐 | MTP 接受率 | λ |
@@ -41,15 +41,15 @@ python3 ~/bench_ttft.py --base-url http://127.0.0.1:8000 \
 | 3 | 178–421 ms | 9.6–10.1 ms | 288–298 tok/s | 51–56% | 2.03–2.12 |
 
 
-![](RTX 5090 推理 Qwen3.6-27B 基准 112 tok/fig2_ttft_tpot.png)
+![](fig2_ttft_tpot.png)
 
 
-![](RTX 5090 推理 Qwen3.6-27B 基准 112 tok/fig3_spec_acceptance.png)
+![](fig3_spec_acceptance.png)
 
 
 #### 显存占用
 
-![](RTX 5090 推理 Qwen3.6-27B 基准 112 tok/fig4_vram_power.png)
+![](fig4_vram_power.png)
 
 32GB 的卡，vLLM 按 `gpu-memory-utilization 0.922` 预留了 28.95 GiB，
 

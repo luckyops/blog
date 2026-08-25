@@ -1,6 +1,6 @@
 ---
 title: 消费级 Blackwell 显卡监控，我写了个 SM Efficiency 工具
-date: 2026-08-24 23:40:00
+date: 2026-06-23 19:19:33
 tags:
 ---
 

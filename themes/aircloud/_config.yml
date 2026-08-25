@@ -1,1 +1,49 @@
-__: aircloud
+# Branding
+favicon: img/avatar.jpg
+sidebar_avatar: img/avatar.jpg
+avatar_style:
+  radius: false
+
+# Navigation entries must point to generated pages.
+menu:
+  home: true
+  tags: false
+  archives: true
+  collect: false
+  about: false
+  search: true
+
+# Social links
+twitter_username: ''
+zhihu_username: ''
+weibo_username: ''
+facebook_username: ''
+github_username: ''
+linkedin_username: ''
+
+friends: []
+
+# Post appearance
+post_style:
+  indent: 0
+
+# Comments
+comment:
+  type: giscus
+  script: |
+    <script src="https://giscus.app/client.js"
+      data-repo="luckyops/blog"
+      data-repo-id="MDEwOlJlcG9zaXRvcnkyMjI2NzA4OTQ="
+      data-category="Announcements"
+      data-category-id="DIC_kwDODUWwLs4CjGt7"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
