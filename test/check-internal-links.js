@@ -72,6 +72,17 @@ assert.deepEqual(unsafeExternalLinks, [], `Unsafe external links:\n${unsafeExter
 assert.match(index, /<html lang="zh-CN">/);
 assert.match(index, /<meta name="keywords" content="熊吉">/);
 
+// Feed 内容必须在 RSS 阅读器中可独立解析：不允许根相对或仅锚点的链接
+const feedPath = path.join(publicRoot, 'atom.xml');
+assert.ok(fs.existsSync(feedPath), 'Feed is enabled but public/atom.xml was not generated');
+const feed = fs.readFileSync(feedPath, 'utf8');
+const relativeFeedUrls = [...feed.matchAll(/\b(?:src|href)="(\/[^"]*|#[^"]*)"/g)].map((match) => match[1]);
+assert.deepEqual(
+  relativeFeedUrls,
+  [],
+  `Feed contains non-absolute URLs that break in RSS readers:\n${relativeFeedUrls.slice(0, 10).join('\n')}`,
+);
+
 const searchPath = path.join(publicRoot, 'search.json');
 assert.ok(fs.existsSync(searchPath), 'Search is enabled but public/search.json was not generated');
 const searchEntries = JSON.parse(fs.readFileSync(searchPath, 'utf8'));

@@ -1,0 +1,3 @@
+# Cloudflare Pages 规则：Atom feed 按 RFC 4287 使用正确的 MIME 类型
+/atom.xml
+  Content-Type: application/atom+xml; charset=utf-8
