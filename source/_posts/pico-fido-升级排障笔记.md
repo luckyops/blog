@@ -1,12 +1,12 @@
 ---
-title: Pico FIDO 升级笔记：Secure Boot 和 Yubico Authenticator 适配
+title: 新入手了 Picokey，升级和折腾记录
 date: 2026-09-17
 tags:
 ---
 
 #### 做个记录
 
-这次给 Pico FIDO 升级，设备是 Raspberry Pi Pico 2，RP2350 芯片，批次是A4（有安全加强），系统是 macOS。
+这次给 Pico FIDO 升级，设备是 Raspberry Pi Pico 2，RP2350 芯片，步进批次是 A4（有安全加强），系统是 macOS。
 
 本来只是想让它在 Yubico Authenticator 里正常使用，结果先遇到了刷写权限错误，适配客户端后又发现编译配置漏开了 EdDSA，中间重新构建、刷了几次。
 
@@ -216,16 +216,19 @@ Sharing violation (0x8010000B)
 
 PIV、OpenPGP 没有加入。FIDO HID、OTP HID 的部分管理写入没有补齐，CCID 管理写入和 Management reset 也有待完善。因此不能因为 Authenticator 能显示设备，就认为“启用/禁用应用程序”和“恢复出厂设置”都能按 YubiKey 的方式使用。
 
-这次最容易踩坑的两个地方：
- -  开启了Secure Boot 以后，`picotool load` 报错不是不能升级。
- -  客户端能识别以后，就忘了检查构建到底保留了哪些功能。先核对签名和写入范围，刷完再看实际运行的能力与算法列表。
- -  需要几个地方都修改做一下伪装，才能和 Yubico Authenticator 完美适配。
-  
+这次最容易踩坑的三个地方：
+
+- 开启 Secure Boot 以后，`picotool load` 报错不代表不能升级。
+- 客户端能识别以后，就忘了检查构建到底保留了哪些功能。先核对签名和写入范围，刷完再看实际运行的能力与算法列表。
+- 需要在几个地方一起做伪装，才能和 Yubico Authenticator 完美适配。
 
 
 #### 使用体验
 
-优点：在常规网站，比如chatgpt、gooogle的使用体验都很棒，尤其是在chatgpt的登陆，比yubikey的登陆更丝滑一点。
-缺点：因为没有通过FIDO 认证，所以不能用在Apple的账户上。
+**优点**：在常规网站（比如 ChatGPT、Google）的使用体验都很棒，尤其是 ChatGPT 的登录，比 YubiKey 还丝滑一点。
 
-我最后手头的设备是：93 RMB买了一个yubico security key 5.4.3, 39 RMB 的一个开源的picokey ，220 RMB买了一个yubico 5c NFC 5.4.3。 这些加起来也没有官网买一个全新的key贵，但是足够把整个体系使用起来了，可靠性也足够。如果不担心picokey使用时间长可能坏掉，这个yubico 5c nfc其实也可以暂缓再购入，都可以。 
+**缺点**：因为没有通过 FIDO 认证，所以不能用在 Apple 的账户上。
+
+我最后手头的设备是：93 RMB 买的 Yubico Security Key（固件 5.4.3）、39 RMB 的开源 picokey、220 RMB 买的 YubiKey 5C NFC（固件 5.4.3）。这些加起来也没有官网买一把全新 Key 贵，但足够把整个体系用起来，可靠性也够。
+
+如果不担心 picokey 用的时间长了可能坏掉，这把 YubiKey 5C NFC 其实也可以暂缓购入，都可以。 
